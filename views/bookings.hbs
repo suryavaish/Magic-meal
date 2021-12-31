@@ -1,0 +1,26 @@
+<p>Here are your bookings:</p>
+{{#if bookings}}
+  <table class='striped'>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Booked At</th>
+        <th>Pick up time</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each stories}}
+        <tr>
+          <td><a href='/stories/{{_id}}'>{{fooditem}}</a></td>
+
+          <td>{{formatDate bookedAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+          <td><span class='dash-status'>{{pickuptime}}</span></td>
+
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>We have not created any stories</p>
+{{/if}}
